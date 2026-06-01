@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Financial Academy Design System — deep navy + gold, Arabic-first */
+
+@layer base {
+  /* Light theme */
+  :root {
+    --background: 40 35% 97%;
+    --foreground: 220 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 10%;
+
+    --primary: 38 80% 45%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 40 25% 92%;
+    --secondary-foreground: 220 50% 10%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 220 15% 40%;
+
+    --accent: 210 90% 50%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 30% 98%;
+
+    --success: 142 70% 38%;
+    --success-foreground: 40 30% 98%;
+
+    --border: 40 20% 85%;
+    --input: 40 20% 85%;
+    --ring: 38 80% 45%;
+
+    --radius: 0.75rem;
+
+    --gold: 38 80% 45%;
+    --gold-bright: 43 85% 55%;
+    --navy-deep: 220 55% 4%;
+    --navy: 220 45% 9%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(40 35% 97%) 0%, hsl(40 30% 92%) 50%, hsl(40 25% 88%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 85% 55%) 0%, hsl(36 80% 45%) 100%);
+    --gradient-ai: linear-gradient(135deg, hsl(210 90% 50%) 0%, hsl(260 80% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9), hsl(40 30% 96% / 0.7));
+
+    --shadow-gold: 0 10px 40px -10px hsl(38 80% 45% / 0.35);
+    --shadow-ai: 0 10px 40px -10px hsl(210 90% 50% / 0.35);
+    --shadow-elegant: 0 20px 60px -20px hsl(220 30% 30% / 0.2);
+
+    --sidebar-background: 40 35% 97%;
+    --sidebar-foreground: 220 50% 10%;
+    --sidebar-primary: 38 80% 45%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 40 25% 92%;
+    --sidebar-accent-foreground: 220 50% 10%;
+    --sidebar-border: 40 20% 85%;
+    --sidebar-ring: 38 80% 45%;
+  }
+
+  /* Dark theme (default for this project) */
+  .dark {
+    --background: 220 45% 6%;
+    --foreground: 40 30% 95%;
+
+    --card: 220 40% 9%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 220 40% 9%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 43 74% 56%;
+    --primary-foreground: 220 45% 6%;
+
+    --secondary: 220 35% 14%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 220 30% 14%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 210 90% 55%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 30% 98%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 40 30% 98%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 43 74% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 43 74% 56%;
+    --gold-bright: 43 85% 65%;
+    --navy-deep: 220 55% 4%;
+    --navy: 220 45% 9%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 55% 4%) 0%, hsl(220 45% 12%) 50%, hsl(215 50% 18%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 85% 65%) 0%, hsl(36 80% 50%) 100%);
+    --gradient-ai: linear-gradient(135deg, hsl(210 90% 55%) 0%, hsl(260 80% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 40% 11% / 0.8), hsl(220 40% 7% / 0.6));
+
+    --shadow-gold: 0 10px 40px -10px hsl(43 74% 56% / 0.4);
+    --shadow-ai: 0 10px 40px -10px hsl(210 90% 55% / 0.4);
+    --shadow-elegant: 0 20px 60px -20px hsl(220 80% 2% / 0.6);
+
+    --sidebar-background: 220 45% 6%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 43 74% 56%;
+    --sidebar-primary-foreground: 220 45% 6%;
+    --sidebar-accent: 220 35% 14%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 43 74% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Tajawal', sans-serif;
+    background-image: radial-gradient(ellipse at top, hsl(var(--background)) 0%, hsl(var(--background)) 100%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image: radial-gradient(ellipse at top, hsl(220 45% 12%) 0%, hsl(220 55% 4%) 70%);
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', 'Tajawal', serif;
+  }
+}
+
+@layer utilities {
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .gradient-ai {
+    background: var(--gradient-ai);
+  }
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-ai {
+    background: var(--gradient-ai);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border));
+  }
+  .dark .glass {
+    background: hsl(220 40% 12% / 0.5);
+    border-color: hsl(43 74% 56% / 0.15);
+  }
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  .shadow-ai {
+    box-shadow: var(--shadow-ai);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+/* Ticker animation */
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 45s linear infinite;
+  white-space: nowrap;
+  gap: 3rem;
+  padding-inline-end: 3rem;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(43 74% 56% / 0.4); }
+  50% { box-shadow: 0 0 40px hsl(43 74% 56% / 0.7); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+/* Markdown prose overrides */
+.prose-chat p { margin: 0.4rem 0; line-height: 1.85; }
+.prose-chat ul, .prose-chat ol { padding-inline-start: 1.5rem; margin: 0.5rem 0; }
+.prose-chat li { margin: 0.2rem 0; }
+.prose-chat code {
+  background: hsl(var(--muted));
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+.prose-chat strong { color: hsl(var(--primary)); }
+.prose-chat h1, .prose-chat h2, .prose-chat h3 {
+  color: hsl(var(--primary));
+  margin-top: 0.6rem;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
